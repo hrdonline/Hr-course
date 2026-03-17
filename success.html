@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оплата прошла · ИИ в HR. Практика</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Manrope',sans-serif;background:linear-gradient(135deg,#0F2033 0%,#1A3347 60%,#1A4A55 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;}
+    .card{background:#fff;border-radius:16px;padding:3rem;max-width:520px;width:100%;text-align:center;box-shadow:0 12px 48px rgba(15,32,51,.35);}
+    .icon{font-size:3.5rem;margin-bottom:1.2rem;}
+    .tariff{display:inline-block;background:#E0F5F3;color:#1A8A7E;padding:.4rem 1.2rem;border-radius:50px;font-size:.82rem;font-weight:700;margin-bottom:1.2rem;}
+    h1{font-size:1.7rem;font-weight:800;color:#0F2033;margin-bottom:.7rem;}
+    .name{color:#1A8A7E;}
+    p{color:#6B7280;line-height:1.7;margin-bottom:.7rem;font-size:.95rem;}
+    .email-box{background:#E0F5F3;color:#1A8A7E;padding:.6rem 1.2rem;border-radius:8px;font-weight:700;margin:1rem 0;display:inline-block;word-break:break-all;}
+    hr{border:none;border-top:1px solid #E5E7EB;margin:1.5rem 0;}
+    .steps{text-align:left;list-style:none;}
+    .steps li{padding:.55rem 0;display:flex;align-items:flex-start;gap:.8rem;font-size:.9rem;color:#374151;}
+    .btn{display:inline-block;margin-top:2rem;background:#1A8A7E;color:#fff;padding:.9rem 2rem;border-radius:50px;text-decoration:none;font-weight:700;transition:background .3s;}
+    .btn:hover{background:#0D5E56;}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🎉</div>
+    <div class="tariff" id="s-tariff">Оплачено</div>
+    <h1>Добро пожаловать, <span class="name" id="s-name">на курс</span>!</h1>
+    <p>Письмо с доступом к материалам отправлено на:</p>
+    <div class="email-box" id="s-email">ваш email</div>
+    <p style="font-size:.82rem;">Не пришло? Проверьте папку «Спам» — обычно письмо приходит в течение 5 минут.</p>
+    <hr>
+    <p style="font-weight:700;color:#0F2033;margin-bottom:.5rem;">Следующие шаги:</p>
+    <ul class="steps">
+      <li>📧 <span>Откройте письмо с доступом к курсу</span></li>
+      <li>💬 <span>Вступите в чат участников — ссылка в письме</span></li>
+      <li>📅 <span>Первая сессия — 14 апреля, 19:00 МСК</span></li>
+    </ul>
+    <a href="/" class="btn">← Вернуться на сайт</a>
+  </div>
+  <script>
+    const p = new URLSearchParams(location.search);
+    if (p.get('name'))   document.getElementById('s-name').textContent   = p.get('name').split(' ')[0];
+    if (p.get('email'))  document.getElementById('s-email').textContent  = p.get('email');
+    if (p.get('tariff')) document.getElementById('s-tariff').textContent = '✅ Тариф «' + p.get('tariff') + '» оплачен';
+  </script>
+</body>
+</html>
