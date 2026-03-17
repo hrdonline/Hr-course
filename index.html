@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -167,7 +168,6 @@
     .curr-stats { display:flex; justify-content:center; gap:40px; margin-top:20px; flex-wrap:wrap; }
     .curr-stat-num { font-size:2.2rem; font-weight:800; color:var(--teal-light); }
     .curr-stat-lbl { font-size:.82rem; color:var(--gray-500); margin-top:2px; }
-
     .module-list { display:flex; flex-direction:column; gap:10px; }
     .module-item { background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius-sm); overflow:hidden; transition:border-color .2s; }
     .module-item.open { border-color:var(--teal-light); }
@@ -187,7 +187,6 @@
     .sess-date { font-size:.76rem; color:var(--teal); font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:5px; }
     .sess h5 { font-size:.93rem; color:var(--navy); margin-bottom:6px; font-weight:700; }
     .sess p { font-size:.86rem; color:var(--gray-500); line-height:1.65; }
-
     .final-blk { background:linear-gradient(135deg,var(--navy-mid),#1a5055); border-radius:var(--radius); padding:36px; color:var(--white); margin-top:20px; }
     .final-blk h4 { color:var(--gold); margin-bottom:18px; font-size:1.05rem; }
     .final-sess { border-top:1px solid rgba(255,255,255,.12); padding-top:18px; margin-top:18px; }
@@ -216,7 +215,7 @@
     .p-features li { display:flex; gap:9px; align-items:flex-start; font-size:.84rem; color:var(--gray-700); }
     .p-features .ck { color:var(--teal); flex-shrink:0; }
     .p-features .ds { color:var(--gray-300); flex-shrink:0; }
-    .p-cta { width:100%; text-align:center; padding:13px; border-radius:50px; font-weight:700; font-size:.88rem; cursor:pointer; transition:all .2s; display:block; }
+    .p-cta { width:100%; text-align:center; padding:13px; border-radius:50px; font-weight:700; font-size:.88rem; cursor:pointer; transition:all .2s; display:block; font-family:'Manrope',sans-serif; border:none; }
     .p-cta.outline { border:2px solid var(--navy); color:var(--navy); background:transparent; }
     .p-cta.outline:hover { background:var(--navy); color:var(--white); }
     .p-cta.main   { background:var(--teal); color:var(--white); border:2px solid var(--teal); }
@@ -297,6 +296,26 @@
     .hero-content > *:nth-child(4) { animation-delay:.4s; }
     .hero-content > *:nth-child(5) { animation-delay:.5s; }
     .hero-content > *:nth-child(6) { animation-delay:.6s; }
+
+    /* ============ MODAL ОПЛАТЫ ============ */
+    .modal-overlay { position:fixed; inset:0; z-index:9000; background:rgba(0,0,0,.65); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:1rem; opacity:0; visibility:hidden; transition:opacity .3s,visibility .3s; }
+    .modal-overlay.active { opacity:1; visibility:visible; }
+    .modal-box { background:var(--white); border-radius:var(--radius); padding:2.5rem; width:100%; max-width:460px; position:relative; transform:translateY(30px) scale(.97); transition:transform .3s; box-shadow:var(--shadow-lg); }
+    .modal-overlay.active .modal-box { transform:translateY(0) scale(1); }
+    .modal-close { position:absolute; top:1.2rem; right:1.2rem; width:32px; height:32px; background:var(--gray-100); border:none; border-radius:50%; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; color:var(--gray-500); transition:background .2s; }
+    .modal-close:hover { background:var(--gray-300); }
+    .m-heading { font-size:1.3rem; font-weight:800; color:var(--navy); margin-bottom:.3rem; }
+    .m-plan { display:inline-flex; align-items:center; gap:.5rem; background:var(--teal-pale); color:var(--teal); padding:.4rem 1rem; border-radius:50px; font-size:.875rem; font-weight:700; margin-bottom:1.5rem; }
+    .m-group { margin-bottom:1rem; }
+    .m-lbl { display:block; font-size:.875rem; font-weight:700; color:var(--gray-700); margin-bottom:.4rem; }
+    .m-inp { width:100%; padding:.875rem 1rem; border:1.5px solid var(--gray-300); border-radius:var(--radius-sm); font-size:1rem; font-family:'Manrope',sans-serif; color:var(--gray-900); outline:none; transition:border-color .2s,box-shadow .2s; background:var(--gray-100); }
+    .m-inp:focus { border-color:var(--teal); box-shadow:0 0 0 3px rgba(26,138,126,.12); background:var(--white); }
+    .m-inp::placeholder { color:var(--gray-500); }
+    .m-err { color:var(--red); font-size:.85rem; padding:.7rem 1rem; background:#FEF2F2; border-radius:var(--radius-sm); margin-bottom:1rem; display:none; }
+    .m-submit { width:100%; padding:1rem; background:var(--teal-light); color:var(--white); border:none; border-radius:50px; font-size:1rem; font-weight:700; cursor:pointer; font-family:'Manrope',sans-serif; transition:all .3s; margin-top:.5rem; }
+    .m-submit:hover:not(:disabled) { background:var(--teal); transform:translateY(-1px); box-shadow:0 8px 24px rgba(26,138,126,.35); }
+    .m-submit:disabled { opacity:.65; cursor:not-allowed; transform:none; }
+    .m-secure { text-align:center; font-size:.75rem; color:var(--gray-500); margin-top:.8rem; }
   </style>
 </head>
 <body>
@@ -318,20 +337,20 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <div class="hero-badge"> Ранняя цена до 25 марта</div>
+        <div class="hero-badge">Ранняя цена до 25 марта</div>
         <h1>ИИ в HR.<br /><em>Практика</em></h1>
         <p class="hero-subtitle">Курс по книге, которой ещё нет в продаже</p>
         <div class="hero-meta">
           <div class="hero-meta-item">Старт 14 апреля</div>
-          <div class="hero-meta-item"> 8 недель · 7 модулей</div>
-          <div class="hero-meta-item"> Онлайн</div>
+          <div class="hero-meta-item">8 недель · 7 модулей</div>
+          <div class="hero-meta-item">Онлайн</div>
         </div>
         <div class="hero-buttons">
           <a href="#pricing" class="btn btn-gold btn-lg">Выбрать тариф</a>
           <a href="https://t.me/ZinaidaChu" target="_blank" class="btn btn-outline btn-lg">Задать вопрос</a>
         </div>
         <div class="countdown-block">
-          <div class="countdown-label"> До конца ранней цены</div>
+          <div class="countdown-label">До конца ранней цены</div>
           <div class="countdown-timer">
             <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><div class="countdown-text">дней</div></div>
             <span class="countdown-sep">:</span>
@@ -344,13 +363,10 @@
         </div>
       </div>
       <div class="hero-image-wrap">
-        <!--  Положите фото рядом с этим файлом и назовите его  foto-hero.jpg -->
-        <img src="IMG_0886.PNG" alt="Зинаида Чумакова" class="IMG_0886"
+        <img src="IMG_0886.PNG" alt="Зинаида Чумакова" class="hero-photo"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-        <div class="photo-placeholder" style="display:none;">
-          <br/>Добавьте фото<br/><strong>IMG_0886.PNG </strong>
-        </div>
-        <div class="hero-tag-book"> Участники получают книгу до выхода в издательстве</div>
+        <div class="photo-placeholder" style="display:none;">Добавьте фото<br/><strong>IMG_0886.PNG</strong></div>
+        <div class="hero-tag-book">Участники получают книгу до выхода в издательстве</div>
       </div>
     </div>
   </div>
@@ -361,7 +377,7 @@
   <div class="container">
     <div class="different-grid">
       <div>
-        <div class="different-label"> Почему я другая</div>
+        <div class="different-label">Почему я другая</div>
         <h2 class="different-title">Промтам сейчас<br />учат многие.<br /><em>Я ДРУГАЯ.</em></h2>
         <p class="different-desc">
           Я HRD с 20-летним опытом. Знаю HR изнутри — и показываю, как ИИ усиливает каждый процесс.<br /><br />
@@ -376,10 +392,9 @@
         </div>
       </div>
       <div>
-        <!-- 📸 Положите ч/б фото рядом с файлом и назовите его foto-bw.jpg -->
-        <img src="123.PNG" alt="Зинаида Чумакова" class="123"
+        <img src="123.PNG" alt="Зинаида Чумакова" class="bw-photo"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-        <div class="bw-ph" style="display:none;" Добавьте фото<br/><strong>foto-bw.jpg</strong></div>
+        <div class="bw-ph" style="display:none;">Добавьте фото<br/><strong>123.PNG</strong></div>
       </div>
     </div>
   </div>
@@ -397,17 +412,17 @@
     </div>
     <div class="book-cards">
       <div class="book-card">
-        <div class="book-icon"> </div>
+        <div class="book-icon">📖</div>
         <h3>Книга до релиза</h3>
         <p>Участники первого потока получают книгу до выхода в издательстве. Второго такого шанса не будет.</p>
       </div>
       <div class="book-card">
-        <div class="book-icon"> </div>
+        <div class="book-icon">📚</div>
         <h3>По одной главе</h3>
         <p>Главы выдаются после каждого модуля — последовательно, чтобы материал усваивался глубже.</p>
       </div>
       <div class="book-card">
-        <div class="book-icon"> </div>
+        <div class="book-icon">🎁</div>
         <h3>Входит в тариф</h3>
         <p>Все главы входят в Базовый, Стандарт и VIP. Тариф «Один модуль» — одна глава по теме.</p>
       </div>
@@ -424,12 +439,12 @@
       Для всех кто работает в HR — роль и опыт не важны. Мы пройдём весь путь сотрудника.
     </p>
     <div class="whom-grid">
-      <div class="whom-card"><div class="whom-icon"></div><h4>Рекрутёры</h4><p>Оптимизируйте поиск кандидатов, автоматизируйте скрининг и пишите вакансии в разы быстрее.</p></div>
-      <div class="whom-card"><div class="whom-icon"></div><h4>HR-менеджеры</h4><p>Освободите время от рутины — для людей, для стратегии, для себя.</p></div>
-      <div class="whom-card"><div class="whom-icon"></div><h4>HR-бизнес-партнёры</h4><p>Пройдите весь путь сотрудника и найдите, где ИИ облегчит именно вашу работу.</p></div>
-      <div class="whom-card"><div class="whom-icon"></div><h4>Специалисты по C&B</h4><p>Разберитесь в предиктивной аналитике и моделировании компенсационного бюджета.</p></div>
-      <div class="whom-card"><div class="whom-icon"></div><h4>HR-директора</h4><p>Посмотрите как ИИ меняет всю функцию целиком и принимайте стратегические решения.</p></div>
-      <div class="whom-card"><div class="whom-icon"></div><h4>Все в HR</h4><p>Чувствуете что ИИ важен — но пока не понимаете, как получить от него реальный результат.</p></div>
+      <div class="whom-card"><div class="whom-icon">🔍</div><h4>Рекрутёры</h4><p>Оптимизируйте поиск кандидатов, автоматизируйте скрининг и пишите вакансии в разы быстрее.</p></div>
+      <div class="whom-card"><div class="whom-icon">👥</div><h4>HR-менеджеры</h4><p>Освободите время от рутины — для людей, для стратегии, для себя.</p></div>
+      <div class="whom-card"><div class="whom-icon">🤝</div><h4>HR-бизнес-партнёры</h4><p>Пройдите весь путь сотрудника и найдите, где ИИ облегчит именно вашу работу.</p></div>
+      <div class="whom-card"><div class="whom-icon">💰</div><h4>Специалисты по C&amp;B</h4><p>Разберитесь в предиктивной аналитике и моделировании компенсационного бюджета.</p></div>
+      <div class="whom-card"><div class="whom-icon">🎯</div><h4>HR-директора</h4><p>Посмотрите как ИИ меняет всю функцию целиком и принимайте стратегические решения.</p></div>
+      <div class="whom-card"><div class="whom-icon">💡</div><h4>Все в HR</h4><p>Чувствуете что ИИ важен — но пока не понимаете, как получить от него реальный результат.</p></div>
     </div>
   </div>
 </section>
@@ -441,11 +456,11 @@
     <h2>Что вы получите на курсе</h2>
     <div class="get-grid">
       <ul class="get-list">
-        <li><div class="get-icon"></div><div class="get-text"><h4>Весь путь сотрудника</h4><p>От найма до офбординга — на каждом этапе поймёте, где и как ИИ помогает</p></div></li>
-        <li><div class="get-icon"></div><div class="get-text"><h4>6 типов ИИ в HR</h4><p>Где экономит время, где меняет решение, а где — опасен</p></div></li>
-        <li><div class="get-icon"></div><div class="get-text"><h4>Промпт-киты</h4><p>Под каждый HR-процесс — применяйте сразу после курса</p></div></li>
-        <li><div class="get-icon"></div><div class="get-text"><h4>Чек-листы и шаблоны</h4><p>Для внедрения ИИ в реальную работу, без воды</p></div></li>
-        <li><div class="get-icon"></div><div class="get-text"><h4>Свой проект внедрения ИИ</h4><p>Конкретный план для вашей компании и HR-функции</p></div></li>
+        <li><div class="get-icon">🗺</div><div class="get-text"><h4>Весь путь сотрудника</h4><p>От найма до офбординга — на каждом этапе поймёте, где и как ИИ помогает</p></div></li>
+        <li><div class="get-icon">🤖</div><div class="get-text"><h4>6 типов ИИ в HR</h4><p>Где экономит время, где меняет решение, а где — опасен</p></div></li>
+        <li><div class="get-icon">✍️</div><div class="get-text"><h4>Промпт-киты</h4><p>Под каждый HR-процесс — применяйте сразу после курса</p></div></li>
+        <li><div class="get-icon">📋</div><div class="get-text"><h4>Чек-листы и шаблоны</h4><p>Для внедрения ИИ в реальную работу, без воды</p></div></li>
+        <li><div class="get-icon">🚀</div><div class="get-text"><h4>Свой проект внедрения ИИ</h4><p>Конкретный план для вашей компании и HR-функции</p></div></li>
       </ul>
       <div>
         <h3 style="color:var(--navy);margin-bottom:18px;">6 типов ИИ, которые уже работают в HR</h3>
@@ -467,10 +482,9 @@
   <div class="container">
     <div class="author-grid">
       <div>
-        <!-- Положите цветное фото рядом с файлом и назовите его foto-author.jpg -->
         <img src="Photo-author.jpg" alt="Зинаида Чумакова" class="author-photo"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-        <div class="author-ph" style="display:none;"><p>Добавьте фото<br/><strong>foto-author.jpg</strong></p></div>
+        <div class="author-ph" style="display:none;"><p>Добавьте фото<br/><strong>Photo-author.jpg</strong></p></div>
       </div>
       <div class="a-content">
         <div class="a-caption">Автор и спикер курса</div>
@@ -480,8 +494,8 @@
         <p>Всё, что разбирается на курсе — верифицировано реальной практикой, а не теорией. На курсе вы получаете двойную ценность: понимание сильных HR-процессов и знание о том, где ИИ вас усилит.</p>
         <blockquote class="a-quote">«Восемь недель — это немного. Но если проходить их осознанно, с реальными задачами из вашей практики, это меняет то, как вы думаете о своей функции и роли в ней.»</blockquote>
         <div class="a-btns">
-          <a href="https://t.me/chumakova_HRD" target="_blank" class="btn btn-outline" style="padding:12px 24px;font-size:.9rem;"> Telegram-канал</a>
-          <a href="https://t.me/ZinaidaChu" target="_blank" class="btn btn-primary" style="padding:12px 24px;font-size:.9rem;"> Написать напрямую</a>
+          <a href="https://t.me/chumakova_HRD" target="_blank" class="btn btn-outline" style="padding:12px 24px;font-size:.9rem;">Telegram-канал</a>
+          <a href="https://t.me/ZinaidaChu" target="_blank" class="btn btn-primary" style="padding:12px 24px;font-size:.9rem;">Написать напрямую</a>
         </div>
       </div>
     </div>
@@ -522,7 +536,7 @@
       <div class="module-item">
         <div class="module-header" onclick="toggleModule(this)">
           <div class="mod-num">2</div>
-          <div class="mod-hdr-txt"><h4>Привлечение, отбор и период до первого дня</h4><div class="mod-date"> 21 и 23 апреля</div></div>
+          <div class="mod-hdr-txt"><h4>Привлечение, отбор и период до первого дня</h4><div class="mod-date">21 и 23 апреля</div></div>
           <span class="mod-chevron">▼</span>
         </div>
         <div class="module-body">
@@ -550,7 +564,7 @@
       <div class="module-item">
         <div class="module-header" onclick="toggleModule(this)">
           <div class="mod-num">4</div>
-          <div class="mod-hdr-txt"><h4>Управление эффективностью и HR-аналитика</h4><div class="mod-date"> 5 и 7 мая</div></div>
+          <div class="mod-hdr-txt"><h4>Управление эффективностью и HR-аналитика</h4><div class="mod-date">5 и 7 мая</div></div>
           <span class="mod-chevron">▼</span>
         </div>
         <div class="module-body">
@@ -564,7 +578,7 @@
       <div class="module-item">
         <div class="module-header" onclick="toggleModule(this)">
           <div class="mod-num">5</div>
-          <div class="mod-hdr-txt"><h4>HR операции и кадровое делопроизводство</h4><div class="mod-date"> 12 и 14 мая</div></div>
+          <div class="mod-hdr-txt"><h4>HR операции и кадровое делопроизводство</h4><div class="mod-date">12 и 14 мая</div></div>
           <span class="mod-chevron">▼</span>
         </div>
         <div class="module-body">
@@ -578,7 +592,7 @@
       <div class="module-item">
         <div class="module-header" onclick="toggleModule(this)">
           <div class="mod-num">6</div>
-          <div class="mod-hdr-txt"><h4>Вовлечённость и бренд работодателя</h4><div class="mod-date"> 19 и 21 мая</div></div>
+          <div class="mod-hdr-txt"><h4>Вовлечённость и бренд работодателя</h4><div class="mod-date">19 и 21 мая</div></div>
           <span class="mod-chevron">▼</span>
         </div>
         <div class="module-body">
@@ -592,7 +606,7 @@
       <div class="module-item">
         <div class="module-header" onclick="toggleModule(this)">
           <div class="mod-num">7</div>
-          <div class="mod-hdr-txt"><h4>Стратегический HR</h4><div class="mod-date"> 26 и 28 мая</div></div>
+          <div class="mod-hdr-txt"><h4>Стратегический HR</h4><div class="mod-date">26 и 28 мая</div></div>
           <span class="mod-chevron">▼</span>
         </div>
         <div class="module-body">
@@ -632,7 +646,7 @@
     <div class="text-center">
       <div class="section-label">Тарифы</div>
       <h2>Выберите свой формат</h2>
-      <div><span class="gold-badge"> Ранняя цена действует до 25 марта 2026</span></div>
+      <div><span class="gold-badge">Ранняя цена действует до 25 марта 2026</span></div>
     </div>
 
     <div class="pricing-grid">
@@ -651,7 +665,7 @@
           <li><span class="ds">—</span> <span style="color:var(--gray-300)">Сертификат</span></li>
           <li><span class="ds">—</span> <span style="color:var(--gray-300)">Защита проекта</span></li>
         </ul>
-        <a href="https://t.me/ZinaidaChu" target="_blank" class="p-cta outline">Записаться</a>
+        <button onclick="openPayment('Один модуль', 8800, 'ИИ в HR. Практика — Один модуль')" class="p-cta outline">Записаться</button>
       </div>
 
       <div class="p-card">
@@ -668,7 +682,7 @@
           <li><span class="ds">—</span> <span style="color:var(--gray-300)">Сертификат</span></li>
           <li><span class="ds">—</span> <span style="color:var(--gray-300)">Защита проекта</span></li>
         </ul>
-        <a href="https://t.me/ZinaidaChu" target="_blank" class="p-cta outline">Записаться</a>
+        <button onclick="openPayment('Базовый', 25500, 'ИИ в HR. Практика — Базовый')" class="p-cta outline">Записаться</button>
       </div>
 
       <div class="p-card featured">
@@ -686,7 +700,7 @@
           <li><span class="ck">✓</span> Защита проекта · 11 июня</li>
           <li><span class="ck">✓</span> Сертификат</li>
         </ul>
-        <a href="https://t.me/ZinaidaChu" target="_blank" class="p-cta main">Записаться</a>
+        <button onclick="openPayment('Стандарт', 39600, 'ИИ в HR. Практика — Стандарт')" class="p-cta main">Записаться</button>
       </div>
 
       <div class="p-card vip">
@@ -707,18 +721,15 @@
           <li><span class="ck">✓</span> 5 личных консультаций по HR и ИИ</li>
           <li><span class="ck">✓</span> Личная стратегия внедрения ИИ · 2 июня</li>
         </ul>
-        <a href="https://t.me/ZinaidaChu" target="_blank" class="p-cta vip-c">Записаться</a>
+        <button onclick="openPayment('VIP', 66000, 'ИИ в HR. Практика — VIP')" class="p-cta vip-c">Записаться</button>
       </div>
 
     </div>
 
     <div class="pricing-note">
       <p>
-        💳 <strong>Как оплатить:</strong> напишите
-        <a href="https://t.me/ZinaidaChu" target="_blank">@ZinaidaChu</a> или
-        <a href="https://t.me/Averkieva_Helen" target="_blank">@Averkieva_Helen</a> —
-        укажите тариф и email, высылаем счёт в течение дня &nbsp;·&nbsp;
-        🏢 <strong>Корпоративная оплата:</strong> нужен ИНН, КПП, название организации &nbsp;·&nbsp;
+        💳 <strong>Как оплатить:</strong> нажмите «Записаться» и заполните форму — вас перенаправит на страницу оплаты ЮKassa &nbsp;·&nbsp;
+        🏢 <strong>Корпоративная оплата:</strong> напишите <a href="https://t.me/ZinaidaChu" target="_blank">@ZinaidaChu</a> — нужен ИНН, КПП, название организации &nbsp;·&nbsp;
         📈 <strong>Рассрочка:</strong> рассматривается индивидуально &nbsp;·&nbsp;
         🌍 <strong>Апгрейд тарифа:</strong> всегда возможен, без переплат
       </p>
@@ -801,14 +812,14 @@
           <a href="https://t.me/Averkieva_Helen" target="_blank" class="btn btn-outline btn-lg">✈️ Написать Елене</a>
         </div>
         <div class="c-details">
-          <div class="c-detail"><div class="c-d-ico"></div><div><a href="https://t.me/ZinaidaChu" style="color:rgba(255,255,255,.85);font-weight:700;">@ZinaidaChu</a> — Зинаида Чумакова</div></div>
-          <div class="c-detail"><div class="c-d-ico"></div><div><a href="https://t.me/Averkieva_Helen" style="color:rgba(255,255,255,.85);font-weight:700;">@Averkieva_Helen</a> — Елена Аверкиева</div></div>
-          <div class="c-detail"><div class="c-d-ico"></div><div><a href="tel:+79241012664" style="color:rgba(255,255,255,.85);font-weight:700;">+7 924 101 2664</a></div></div>
-          <div class="c-detail"><div class="c-d-ico"></div><div><a href="https://t.me/chumakova_HRD" target="_blank" style="color:rgba(255,255,255,.85);font-weight:700;">t.me/chumakova_HRD</a> — Telegram-канал</div></div>
+          <div class="c-detail"><div class="c-d-ico">✈️</div><div><a href="https://t.me/ZinaidaChu" style="color:rgba(255,255,255,.85);font-weight:700;">@ZinaidaChu</a> — Зинаида Чумакова</div></div>
+          <div class="c-detail"><div class="c-d-ico">✈️</div><div><a href="https://t.me/Averkieva_Helen" style="color:rgba(255,255,255,.85);font-weight:700;">@Averkieva_Helen</a> — Елена Аверкиева</div></div>
+          <div class="c-detail"><div class="c-d-ico">📞</div><div><a href="tel:+79241012664" style="color:rgba(255,255,255,.85);font-weight:700;">+7 924 101 2664</a></div></div>
+          <div class="c-detail"><div class="c-d-ico">📢</div><div><a href="https://t.me/chumakova_HRD" target="_blank" style="color:rgba(255,255,255,.85);font-weight:700;">t.me/chumakova_HRD</a> — Telegram-канал</div></div>
         </div>
       </div>
       <div class="c-sidebar">
-        <h4> Слово автора</h4>
+        <h4>Слово автора</h4>
         <p>Восемь недель — это немного. Но если проходить их осознанно, с реальными задачами из вашей практики, это меняет то, как вы думаете о своей функции и о своей роли в ней.<br /><br />Я собирала эту программу долго. Проверяла каждую тему на себе, на клиентах, на реальных HR-командах. Убирала то, что звучит красиво, но не работает.<br /><br />Жду вас.</p>
         <div style="margin-top:14px;color:rgba(255,255,255,.45);font-size:.84rem;font-style:italic;">— Зинаида</div>
       </div>
@@ -827,21 +838,47 @@
 
 <!-- ======= STICKY BAR ======= -->
 <div class="sticky-cta" id="stickyCta">
-  <span class="sticky-cta-text"> Ранняя цена до 25 марта — <strong>экономия до 9 000 ₽</strong></span>
+  <span class="sticky-cta-text">Ранняя цена до 25 марта — <strong>экономия до 9 000 ₽</strong></span>
   <a href="#pricing" class="btn btn-gold" style="padding:10px 28px;font-size:.9rem;">Выбрать тариф</a>
+</div>
+
+<!-- ======= MODAL ОПЛАТЫ ======= -->
+<div class="modal-overlay" id="payModal" onclick="handleOverlay(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="m-heading">Оформление заказа</div>
+    <div class="m-plan">📦 <span id="m-tariff">Тариф</span> — <span id="m-price">0</span> ₽</div>
+    <div class="m-err" id="m-err"></div>
+    <form onsubmit="submitPay(event)" novalidate>
+      <div class="m-group">
+        <label class="m-lbl" for="m-name">Имя и фамилия *</label>
+        <input class="m-inp" id="m-name" type="text" placeholder="Иван Иванов" required autocomplete="name" />
+      </div>
+      <div class="m-group">
+        <label class="m-lbl" for="m-email">Email — сюда придут материалы *</label>
+        <input class="m-inp" id="m-email" type="email" placeholder="ivan@example.com" required autocomplete="email" />
+      </div>
+      <div class="m-group">
+        <label class="m-lbl" for="m-phone">Телефон *</label>
+        <input class="m-inp" id="m-phone" type="tel" placeholder="+7 900 000-00-00" required autocomplete="tel" />
+      </div>
+      <button type="submit" class="m-submit" id="m-btn">💳 Перейти к оплате</button>
+    </form>
+    <p class="m-secure">🔒 Безопасная оплата · ЮKassa · SSL-шифрование</p>
+  </div>
 </div>
 
 <!-- ======= SCRIPTS ======= -->
 <script>
   // --- Navbar scroll ---
-  const navbar   = document.getElementById('navbar');
+  const navbar    = document.getElementById('navbar');
   const stickyCta = document.getElementById('stickyCta');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
     stickyCta.classList.toggle('visible', window.scrollY > 500);
   });
 
-  // --- Countdown to March 25, 2026, 23:59:59 MSK (UTC+3 → 20:59:59 UTC) ---
+  // --- Countdown to March 25, 2026, 23:59:59 MSK ---
   function updateCountdown() {
     const deadline = new Date('2026-03-25T20:59:59Z');
     const diff = deadline - new Date();
@@ -860,7 +897,7 @@
 
   // --- Module accordion ---
   function toggleModule(header) {
-    const item   = header.parentElement;
+    const item    = header.parentElement;
     const wasOpen = item.classList.contains('open');
     document.querySelectorAll('.module-item').forEach(m => m.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
@@ -878,7 +915,85 @@
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' }); }
     });
   });
+
+  // --- ОПЛАТА ЮКасса ---
+  let plan = {};
+
+  function openPayment(tariff, amount, desc) {
+    plan = { tariff, amount, desc };
+    document.getElementById('m-tariff').textContent = tariff;
+    document.getElementById('m-price').textContent  = amount.toLocaleString('ru-RU');
+    document.getElementById('m-err').style.display  = 'none';
+    document.getElementById('m-btn').disabled       = false;
+    document.getElementById('m-btn').textContent    = '💳 Перейти к оплате';
+    document.getElementById('m-name').value         = '';
+    document.getElementById('m-email').value        = '';
+    document.getElementById('m-phone').value        = '';
+    document.getElementById('payModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('payModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function handleOverlay(e) {
+    if (e.target.id === 'payModal') closeModal();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  async function submitPay(e) {
+    e.preventDefault();
+    const name  = document.getElementById('m-name').value.trim();
+    const email = document.getElementById('m-email').value.trim();
+    const phone = document.getElementById('m-phone').value.trim();
+
+    if (!name || !email || !phone)                         { showErr('Заполните все поля'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))         { showErr('Введите корректный email'); return; }
+    if (phone.replace(/\D/g, '').length < 10)              { showErr('Введите корректный телефон'); return; }
+
+    document.getElementById('m-err').style.display = 'none';
+    const btn = document.getElementById('m-btn');
+    btn.disabled    = true;
+    btn.textContent = '⏳ Перенаправление на оплату...';
+
+    try {
+      const res  = await fetch('/api/create-payment', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({
+          name,
+          email,
+          phone,
+          tariff:      plan.tariff,
+          amount:      plan.amount,
+          description: plan.desc
+        })
+      });
+      const data = await res.json();
+      if (data.redirect_url) {
+        window.location.href = data.redirect_url;
+      } else {
+        throw new Error(data.error || 'Ошибка при создании платежа');
+      }
+    } catch (err) {
+      btn.disabled    = false;
+      btn.textContent = '💳 Перейти к оплате';
+      showErr(err.message);
+    }
+  }
+
+  function showErr(msg) {
+    const el         = document.getElementById('m-err');
+    el.textContent   = '⚠️ ' + msg;
+    el.style.display = 'block';
+  }
 </script>
 
 </body>
 </html>
+```
