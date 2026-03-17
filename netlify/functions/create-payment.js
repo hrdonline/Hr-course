@@ -1,3 +1,4 @@
+```javascript
 const https = require('https');
 
 exports.handler = async (event) => {
@@ -29,7 +30,7 @@ exports.handler = async (event) => {
                                                   '+7' + digits.slice(-10);
 
     const amountStr  = parseFloat(amount).toFixed(2);
-    const idempotKey = `${Date.now()}-${email.replace(/\W/g,'')}-${tariff}`.slice(0, 64);
+    const idempotKey = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 
     const requestBody = JSON.stringify({
       amount:       { value: amountStr, currency: 'RUB' },
@@ -91,3 +92,6 @@ exports.handler = async (event) => {
     };
   }
 };
+```
+
+Копируете целиком, заменяете файл на GitHub, ждёте 1 минуту — и пробуете снова 👇
