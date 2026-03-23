@@ -316,6 +316,41 @@
     .m-submit:hover:not(:disabled) { background:var(--teal); transform:translateY(-1px); box-shadow:0 8px 24px rgba(26,138,126,.35); }
     .m-submit:disabled { opacity:.65; cursor:not-allowed; transform:none; }
     .m-secure { text-align:center; font-size:.75rem; color:var(--gray-500); margin-top:.8rem; }
+    ```css
+/* ============ REFERRAL ============ */
+.section-referral { background: var(--off-white); }
+.ref-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:44px; }
+.ref-card { background:var(--white); border:2px solid var(--gray-300); border-radius:var(--radius); padding:32px 20px; text-align:center; transition:all .25s ease; }
+.ref-card:hover { border-color:var(--teal-light); box-shadow:var(--shadow); transform:translateY(-4px); }
+.ref-card.ref-hot  { border-color:var(--teal); background:linear-gradient(145deg,#EEF9F8,var(--white)); }
+.ref-card.ref-star { border-color:var(--gold);  background:linear-gradient(145deg,#FFF9EE,var(--white)); }
+.ref-step { width:48px; height:48px; background:var(--teal-pale); color:var(--teal); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem; margin:0 auto 14px; }
+.ref-card.ref-hot  .ref-step { background:var(--teal); color:var(--white); }
+.ref-card.ref-star .ref-step { background:var(--gold); color:var(--navy); }
+.ref-count { font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; font-weight:700; color:var(--gray-500); margin-bottom:12px; }
+.ref-card.ref-hot  .ref-count { color:var(--teal); }
+.ref-card.ref-star .ref-count { color:var(--gold); }
+.ref-reward { font-size:1rem; font-weight:800; color:var(--navy); margin-bottom:10px; line-height:1.3; }
+.ref-card p { font-size:.85rem; color:var(--gray-500); line-height:1.65; }
+.ref-how { margin-top:32px; background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius-sm); padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.ref-how p { color:var(--gray-700); font-size:.95rem; margin:0; }
+
+/* ============ BOOK + COVER ============ */
+.book-inner-grid { display:grid; grid-template-columns:260px 1fr; gap:60px; align-items:center; }
+.book-cover-img { width:100%; border-radius:14px; box-shadow:0 28px 72px rgba(0,0,0,.55); }
+.book-cover-ph { width:100%; aspect-ratio:2/3; background:rgba(255,255,255,.1); border-radius:14px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.35); font-size:.85rem; text-align:center; padding:20px; }
+.book-cards-v { display:flex; flex-direction:column; gap:14px; }
+.book-card-h { display:flex; gap:18px; align-items:flex-start; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-sm); padding:18px 22px; }
+.book-card-h .book-icon { font-size:1.7rem; flex-shrink:0; }
+.book-card-h h3 { color:var(--white); margin-bottom:4px; font-size:1rem; }
+.book-card-h p  { color:rgba(255,255,255,.68); font-size:.875rem; }
+
+@media (max-width:768px) {
+  .ref-grid { grid-template-columns:1fr 1fr; }
+  .book-inner-grid { grid-template-columns:1fr; }
+  .book-cover-img { max-width:200px; margin:0 auto; }
+}
+```
   </style>
 </head>
 <body>
@@ -814,7 +849,7 @@
         <div class="c-details">
           <div class="c-detail"><div class="c-d-ico"></div><div><a href="https://t.me/ZinaidaChu" style="color:rgba(255,255,255,.85);font-weight:700;">@ZinaidaChu</a> — Зинаида Чумакова</div></div>
           <div class="c-detail"><div class="c-d-ico"></div><div><a href="https://t.me/Averkieva_Helen" style="color:rgba(255,255,255,.85);font-weight:700;">@Averkieva_Helen</a> — Елена Аверкиева</div></div>
-          <div class="c-detail"><div class="c-d-ico"></div><div><a href="tel:+79241012664" style="color:rgba(255,255,255,.85);font-weight:700;">+7 924 101 2664</a></div></div>
+          <div class="c-detail"><div class="c-d-ico"></div><div><a href="tel:+79253867994 Елена" style="color:rgba(255,255,255,.85);font-weight:700;">+7 924 101 2664</a></div></div>
           <div class="c-detail"><div class="c-d-ico"></div><div><a href="https://t.me/chumakova_HRD" target="_blank" style="color:rgba(255,255,255,.85);font-weight:700;">t.me/chumakova_HRD</a> — Telegram-канал</div></div>
         </div>
       </div>
