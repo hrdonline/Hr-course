@@ -1,11 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ИИ в HR. Практика — курс Зинаиды Чумаковой</title>
-  <meta name="description" content="8-недельный практический курс по ИИ в HR от HRD с 20-летним опытом. Старт 14 апреля. Ранняя цена до 25 марта 2026." />
+  <meta name="description" content="8-недельный практический курс по ИИ в HR от HRD с 20-летним опытом. Старт 14 апреля. Онлайн." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -86,22 +85,12 @@
                  radial-gradient(ellipse at 20% 80%, rgba(96,196,184,.15) 0%, transparent 50%);
     }
     .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; position:relative; z-index:1; }
-    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(232,167,48,.18); border:1px solid rgba(232,167,48,.4); color:var(--gold); padding:8px 20px; border-radius:50px; font-size:.82rem; font-weight:700; margin-bottom:24px; letter-spacing:.05em; text-transform:uppercase; }
     .hero h1 { color:var(--white); margin-bottom:10px; }
     .hero h1 em { font-style:normal; color:var(--teal-mid); }
     .hero-subtitle { font-size:1.15rem; color:rgba(255,255,255,.72); margin-bottom:28px; font-weight:500; }
     .hero-meta { display:flex; gap:20px; margin-bottom:32px; flex-wrap:wrap; }
     .hero-meta-item { display:flex; align-items:center; gap:8px; font-size:.88rem; color:rgba(255,255,255,.65); }
     .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px; }
-
-    /* Countdown */
-    .countdown-block { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); border-radius:var(--radius); padding:20px 24px; display:inline-block; }
-    .countdown-label { font-size:.75rem; color:var(--gold); text-transform:uppercase; letter-spacing:.08em; font-weight:700; margin-bottom:12px; }
-    .countdown-timer { display:flex; gap:14px; }
-    .countdown-unit { text-align:center; }
-    .countdown-num { font-size:2.2rem; font-weight:800; color:var(--white); line-height:1; display:block; }
-    .countdown-text { font-size:.68rem; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.1em; margin-top:4px; }
-    .countdown-sep { font-size:2rem; color:rgba(255,255,255,.3); align-self:flex-start; padding-top:2px; }
 
     /* Hero image */
     .hero-photo { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--radius); box-shadow:var(--shadow-lg); }
@@ -123,11 +112,14 @@
 
     /* ============ BOOK ============ */
     .section-book { background:linear-gradient(135deg,var(--teal) 0%,#0D5E56 100%); color:var(--white); }
-    .book-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
-    .book-card { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:var(--radius); padding:36px 28px; text-align:center; }
-    .book-icon { font-size:2.6rem; margin-bottom:14px; }
-    .book-card h3 { color:var(--white); margin-bottom:10px; font-size:1.15rem; }
-    .book-card p { color:rgba(255,255,255,.75); font-size:.9rem; }
+    .book-inner-grid { display:grid; grid-template-columns:260px 1fr; gap:60px; align-items:center; }
+    .book-cover-img { width:100%; border-radius:14px; box-shadow:0 28px 72px rgba(0,0,0,.55); }
+    .book-cover-ph { width:100%; aspect-ratio:2/3; background:rgba(255,255,255,.1); border-radius:14px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.35); font-size:.85rem; text-align:center; padding:20px; }
+    .book-cards-v { display:flex; flex-direction:column; gap:14px; }
+    .book-card-h { display:flex; gap:18px; align-items:flex-start; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-sm); padding:18px 22px; }
+    .book-card-h .book-icon { font-size:1.7rem; flex-shrink:0; }
+    .book-card-h h3 { color:var(--white); margin-bottom:4px; font-size:1rem; }
+    .book-card-h p  { color:rgba(255,255,255,.68); font-size:.875rem; }
 
     /* ============ FOR WHOM ============ */
     .whom-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px; }
@@ -197,7 +189,6 @@
 
     /* ============ PRICING ============ */
     .section-pricing { background:var(--off-white); }
-    .gold-badge { display:inline-block; background:var(--gold-light); border:1px solid rgba(232,167,48,.35); color:var(--gold); padding:6px 18px; border-radius:50px; font-size:.82rem; font-weight:700; margin-top:14px; }
     .pricing-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:44px; align-items:stretch; }
     .p-card { background:var(--white); border:2px solid var(--gray-300); border-radius:var(--radius); padding:28px 20px; display:flex; flex-direction:column; position:relative; transition:all .25s ease; }
     .p-card:hover { border-color:var(--teal-light); box-shadow:var(--shadow); }
@@ -208,9 +199,7 @@
     .p-name { font-size:.76rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700; color:var(--gray-500); margin-bottom:10px; }
     .p-card.featured .p-name { color:var(--teal); }
     .p-card.vip .p-name { color:var(--gold); }
-    .p-price { font-size:1.9rem; font-weight:800; color:var(--navy); line-height:1; }
-    .p-was { font-size:.85rem; color:var(--gray-500); text-decoration:line-through; margin-top:5px; }
-    .p-dead { font-size:.74rem; color:var(--red); font-weight:600; margin-top:3px; margin-bottom:20px; }
+    .p-price { font-size:1.9rem; font-weight:800; color:var(--navy); line-height:1; margin-bottom:20px; }
     .p-features { list-style:none; flex:1; display:flex; flex-direction:column; gap:9px; margin-bottom:24px; }
     .p-features li { display:flex; gap:9px; align-items:flex-start; font-size:.84rem; color:var(--gray-700); }
     .p-features .ck { color:var(--teal); flex-shrink:0; }
@@ -225,6 +214,24 @@
     .pricing-note { margin-top:28px; padding:22px 24px; background:var(--white); border-radius:var(--radius-sm); border:1px solid var(--gray-300); text-align:center; }
     .pricing-note p { font-size:.88rem; color:var(--gray-500); }
     .pricing-note a { color:var(--teal); font-weight:600; }
+
+    /* ============ REFERRAL ============ */
+    .section-referral { background:var(--white); }
+    .ref-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:44px; }
+    .ref-card { background:var(--off-white); border:2px solid var(--gray-300); border-radius:var(--radius); padding:32px 20px; text-align:center; transition:all .25s ease; }
+    .ref-card:hover { border-color:var(--teal-light); box-shadow:var(--shadow); transform:translateY(-4px); }
+    .ref-card.ref-hot  { border-color:var(--teal); background:linear-gradient(145deg,#EEF9F8,var(--white)); }
+    .ref-card.ref-star { border-color:var(--gold);  background:linear-gradient(145deg,#FFF9EE,var(--white)); }
+    .ref-step { width:48px; height:48px; background:var(--teal-pale); color:var(--teal); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem; margin:0 auto 14px; }
+    .ref-card.ref-hot  .ref-step { background:var(--teal); color:var(--white); }
+    .ref-card.ref-star .ref-step { background:var(--gold); color:var(--navy); }
+    .ref-count { font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; font-weight:700; color:var(--gray-500); margin-bottom:12px; }
+    .ref-card.ref-hot  .ref-count { color:var(--teal); }
+    .ref-card.ref-star .ref-count { color:var(--gold); }
+    .ref-reward { font-size:1rem; font-weight:800; color:var(--navy); margin-bottom:10px; line-height:1.3; }
+    .ref-card p { font-size:.85rem; color:var(--gray-500); line-height:1.65; }
+    .ref-how { margin-top:32px; background:var(--off-white); border:1px solid var(--gray-300); border-radius:var(--radius-sm); padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    .ref-how p { color:var(--gray-700); font-size:.95rem; margin:0; }
 
     /* ============ FAQ ============ */
     .faq-list { display:flex; flex-direction:column; gap:8px; margin-top:36px; }
@@ -273,7 +280,6 @@
       .hero-photo,.photo-placeholder { aspect-ratio:1/1; max-height:320px; }
       .different-grid { grid-template-columns:1fr; gap:36px; }
       .bw-photo,.bw-ph { aspect-ratio:1/1; max-height:280px; max-width:280px; margin:0 auto; }
-      .book-cards { grid-template-columns:1fr; }
       .whom-grid  { grid-template-columns:1fr; }
       .get-grid   { grid-template-columns:1fr; }
       .ai-grid    { grid-template-columns:1fr; }
@@ -285,6 +291,9 @@
       .hero-buttons,.c-buttons,.a-btns { flex-direction:column; }
       .module-body { padding-left:16px; }
       .sticky-cta { flex-direction:column; gap:10px; }
+      .ref-grid { grid-template-columns:1fr 1fr; }
+      .book-inner-grid { grid-template-columns:1fr; }
+      .book-cover-img { max-width:200px; margin:0 auto; }
     }
 
     /* ============ ANIMATIONS ============ */
@@ -295,7 +304,6 @@
     .hero-content > *:nth-child(3) { animation-delay:.3s; }
     .hero-content > *:nth-child(4) { animation-delay:.4s; }
     .hero-content > *:nth-child(5) { animation-delay:.5s; }
-    .hero-content > *:nth-child(6) { animation-delay:.6s; }
 
     /* ============ MODAL ОПЛАТЫ ============ */
     .modal-overlay { position:fixed; inset:0; z-index:9000; background:rgba(0,0,0,.65); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:1rem; opacity:0; visibility:hidden; transition:opacity .3s,visibility .3s; }
@@ -316,41 +324,6 @@
     .m-submit:hover:not(:disabled) { background:var(--teal); transform:translateY(-1px); box-shadow:0 8px 24px rgba(26,138,126,.35); }
     .m-submit:disabled { opacity:.65; cursor:not-allowed; transform:none; }
     .m-secure { text-align:center; font-size:.75rem; color:var(--gray-500); margin-top:.8rem; }
-    ```css
-/* ============ REFERRAL ============ */
-.section-referral { background: var(--off-white); }
-.ref-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:44px; }
-.ref-card { background:var(--white); border:2px solid var(--gray-300); border-radius:var(--radius); padding:32px 20px; text-align:center; transition:all .25s ease; }
-.ref-card:hover { border-color:var(--teal-light); box-shadow:var(--shadow); transform:translateY(-4px); }
-.ref-card.ref-hot  { border-color:var(--teal); background:linear-gradient(145deg,#EEF9F8,var(--white)); }
-.ref-card.ref-star { border-color:var(--gold);  background:linear-gradient(145deg,#FFF9EE,var(--white)); }
-.ref-step { width:48px; height:48px; background:var(--teal-pale); color:var(--teal); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem; margin:0 auto 14px; }
-.ref-card.ref-hot  .ref-step { background:var(--teal); color:var(--white); }
-.ref-card.ref-star .ref-step { background:var(--gold); color:var(--navy); }
-.ref-count { font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; font-weight:700; color:var(--gray-500); margin-bottom:12px; }
-.ref-card.ref-hot  .ref-count { color:var(--teal); }
-.ref-card.ref-star .ref-count { color:var(--gold); }
-.ref-reward { font-size:1rem; font-weight:800; color:var(--navy); margin-bottom:10px; line-height:1.3; }
-.ref-card p { font-size:.85rem; color:var(--gray-500); line-height:1.65; }
-.ref-how { margin-top:32px; background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius-sm); padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
-.ref-how p { color:var(--gray-700); font-size:.95rem; margin:0; }
-
-/* ============ BOOK + COVER ============ */
-.book-inner-grid { display:grid; grid-template-columns:260px 1fr; gap:60px; align-items:center; }
-.book-cover-img { width:100%; border-radius:14px; box-shadow:0 28px 72px rgba(0,0,0,.55); }
-.book-cover-ph { width:100%; aspect-ratio:2/3; background:rgba(255,255,255,.1); border-radius:14px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.35); font-size:.85rem; text-align:center; padding:20px; }
-.book-cards-v { display:flex; flex-direction:column; gap:14px; }
-.book-card-h { display:flex; gap:18px; align-items:flex-start; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-sm); padding:18px 22px; }
-.book-card-h .book-icon { font-size:1.7rem; flex-shrink:0; }
-.book-card-h h3 { color:var(--white); margin-bottom:4px; font-size:1rem; }
-.book-card-h p  { color:rgba(255,255,255,.68); font-size:.875rem; }
-
-@media (max-width:768px) {
-  .ref-grid { grid-template-columns:1fr 1fr; }
-  .book-inner-grid { grid-template-columns:1fr; }
-  .book-cover-img { max-width:200px; margin:0 auto; }
-}
-```
   </style>
 </head>
 <body>
@@ -372,7 +345,6 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <div class="hero-badge">Ранняя цена до 25 марта</div>
         <h1>ИИ в HR.<br /><em>Практика</em></h1>
         <p class="hero-subtitle">Курс по книге, которой ещё нет в продаже</p>
         <div class="hero-meta">
@@ -383,18 +355,6 @@
         <div class="hero-buttons">
           <a href="#pricing" class="btn btn-gold btn-lg">Выбрать тариф</a>
           <a href="https://t.me/ZinaidaChu" target="_blank" class="btn btn-outline btn-lg">Задать вопрос</a>
-        </div>
-        <div class="countdown-block">
-          <div class="countdown-label">До конца ранней цены</div>
-          <div class="countdown-timer">
-            <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><div class="countdown-text">дней</div></div>
-            <span class="countdown-sep">:</span>
-            <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><div class="countdown-text">часов</div></div>
-            <span class="countdown-sep">:</span>
-            <div class="countdown-unit"><span class="countdown-num" id="cd-mins">--</span><div class="countdown-text">минут</div></div>
-            <span class="countdown-sep">:</span>
-            <div class="countdown-unit"><span class="countdown-num" id="cd-secs">--</span><div class="countdown-text">секунд</div></div>
-          </div>
         </div>
       </div>
       <div class="hero-image-wrap">
@@ -438,28 +398,32 @@
 <!-- ======= BOOK ======= -->
 <section class="section section-book">
   <div class="container">
-    <div class="text-center">
-      <div class="section-label light">Эксклюзив первого потока</div>
-      <h2 style="color:var(--white);">Курс идёт по книге,<br />которая ещё не вышла</h2>
-      <p style="color:rgba(255,255,255,.75);max-width:600px;margin:14px auto 0;font-size:1.05rem;">
-        «ИИ в HR. Руководство по работе с интеллектом: своим и искусственным»
-      </p>
-    </div>
-    <div class="book-cards">
-      <div class="book-card">
-        <div class="book-icon"></div>
-        <h3>Книга до релиза</h3>
-        <p>Участники первого потока получают книгу до выхода в издательстве. Второго такого шанса не будет.</p>
+    <div class="book-inner-grid">
+      <div>
+        <img src="book-cover.jpg" alt="ИИ в HR — книга Зинаиды Чумаковой" class="book-cover-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="book-cover-ph" style="display:none;">Обложка книги<br/><strong>book-cover.jpg</strong></div>
       </div>
-      <div class="book-card">
-        <div class="book-icon"></div>
-        <h3>По одной главе</h3>
-        <p>Главы выдаются после каждого модуля — последовательно, чтобы материал усваивался глубже.</p>
-      </div>
-      <div class="book-card">
-        <div class="book-icon"></div>
-        <h3>Входит в тариф</h3>
-        <p>Все главы входят в Базовый, Стандарт и VIP. Тариф «Один модуль» — одна глава по теме.</p>
+      <div>
+        <div class="section-label light">Эксклюзив первого потока</div>
+        <h2 style="color:var(--white);margin-bottom:12px;">Курс идёт по книге,<br />которая ещё не вышла</h2>
+        <p style="color:rgba(255,255,255,.75);margin-bottom:28px;font-size:1.05rem;line-height:1.7;max-width:480px;">
+          «ИИ в HR. Руководство по работе с интеллектом: своим и искусственным»
+        </p>
+        <div class="book-cards-v">
+          <div class="book-card-h">
+            <div class="book-icon">📖</div>
+            <div><h3>Книга до релиза</h3><p>Участники первого потока получают книгу до выхода в издательстве. Второго такого шанса не будет.</p></div>
+          </div>
+          <div class="book-card-h">
+            <div class="book-icon">📋</div>
+            <div><h3>По одной главе</h3><p>Главы выдаются после каждого модуля — последовательно, чтобы материал усваивался глубже.</p></div>
+          </div>
+          <div class="book-card-h">
+            <div class="book-icon">✅</div>
+            <div><h3>Входит в тариф</h3><p>Базовый, Стандарт и VIP — все главы. «Один модуль» — одна глава по теме модуля.</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -681,16 +645,13 @@
     <div class="text-center">
       <div class="section-label">Тарифы</div>
       <h2>Выберите свой формат</h2>
-      <div><span class="gold-badge">Ранняя цена действует до 25 марта 2026</span></div>
     </div>
 
     <div class="pricing-grid">
 
       <div class="p-card">
         <div class="p-name">Один модуль</div>
-        <div class="p-price">8 800 ₽</div>
-        <div class="p-was">10 000 ₽ после 25 марта</div>
-        <div class="p-dead">Экономия 1 200 ₽</div>
+        <div class="p-price">10 000 ₽</div>
         <ul class="p-features">
           <li><span class="ck">✓</span> Онлайн-сессии выбранного модуля</li>
           <li><span class="ck">✓</span> Запись сессий</li>
@@ -700,14 +661,12 @@
           <li><span class="ds">—</span> <span style="color:var(--gray-300)">Сертификат</span></li>
           <li><span class="ds">—</span> <span style="color:var(--gray-300)">Защита проекта</span></li>
         </ul>
-        <button onclick="openPayment('Один модуль', 8800, 'ИИ в HR. Практика — Один модуль')" class="p-cta outline">Записаться</button>
+        <button onclick="openPayment('Один модуль', 10000, 'ИИ в HR. Практика — Один модуль')" class="p-cta outline">Записаться</button>
       </div>
 
       <div class="p-card">
         <div class="p-name">Базовый</div>
-        <div class="p-price">25 500 ₽</div>
-        <div class="p-was">29 000 ₽ после 25 марта</div>
-        <div class="p-dead">Экономия 3 500 ₽</div>
+        <div class="p-price">29 000 ₽</div>
         <ul class="p-features">
           <li><span class="ck">✓</span> Все модули + финальный блок</li>
           <li><span class="ck">✓</span> Запись всех сессий</li>
@@ -717,15 +676,13 @@
           <li><span class="ds">—</span> <span style="color:var(--gray-300)">Сертификат</span></li>
           <li><span class="ds">—</span> <span style="color:var(--gray-300)">Защита проекта</span></li>
         </ul>
-        <button onclick="openPayment('Базовый', 25500, 'ИИ в HR. Практика — Базовый')" class="p-cta outline">Записаться</button>
+        <button onclick="openPayment('Базовый', 29000, 'ИИ в HR. Практика — Базовый')" class="p-cta outline">Записаться</button>
       </div>
 
       <div class="p-card featured">
         <div class="p-badge">Популярный</div>
         <div class="p-name">Стандарт</div>
-        <div class="p-price">39 600 ₽</div>
-        <div class="p-was">45 000 ₽ после 25 марта</div>
-        <div class="p-dead">Экономия 5 400 ₽</div>
+        <div class="p-price">45 000 ₽</div>
         <ul class="p-features">
           <li><span class="ck">✓</span> Все модули + финальный блок</li>
           <li><span class="ck">✓</span> Запись всех сессий</li>
@@ -735,15 +692,13 @@
           <li><span class="ck">✓</span> Защита проекта · 11 июня</li>
           <li><span class="ck">✓</span> Сертификат</li>
         </ul>
-        <button onclick="openPayment('Стандарт', 39600, 'ИИ в HR. Практика — Стандарт')" class="p-cta main">Записаться</button>
+        <button onclick="openPayment('Стандарт', 45000, 'ИИ в HR. Практика — Стандарт')" class="p-cta main">Записаться</button>
       </div>
 
       <div class="p-card vip">
         <div class="p-badge">Максимум</div>
         <div class="p-name">VIP</div>
-        <div class="p-price">66 000 ₽</div>
-        <div class="p-was">75 000 ₽ после 25 марта</div>
-        <div class="p-dead">Экономия 9 000 ₽</div>
+        <div class="p-price">75 000 ₽</div>
         <ul class="p-features">
           <li><span class="ck">✓</span> Все модули + финальный блок</li>
           <li><span class="ck">✓</span> Запись всех сессий</li>
@@ -756,18 +711,62 @@
           <li><span class="ck">✓</span> 5 личных консультаций по HR и ИИ</li>
           <li><span class="ck">✓</span> Личная стратегия внедрения ИИ · 2 июня</li>
         </ul>
-        <button onclick="openPayment('VIP', 66000, 'ИИ в HR. Практика — VIP')" class="p-cta vip-c">Записаться</button>
+        <button onclick="openPayment('VIP', 75000, 'ИИ в HR. Практика — VIP')" class="p-cta vip-c">Записаться</button>
       </div>
 
     </div>
 
     <div class="pricing-note">
       <p>
-         <strong>Как оплатить:</strong> нажмите «Записаться» и заполните форму — вас перенаправит на страницу оплаты ЮKassa &nbsp;·&nbsp;
-         <strong>Корпоративная оплата:</strong> напишите <a href="https://t.me/ZinaidaChu" target="_blank">@ZinaidaChu</a> — нужен ИНН, КПП, название организации &nbsp;·&nbsp;
+        <strong>Как оплатить:</strong> нажмите «Записаться» и заполните форму — вас перенаправит на страницу оплаты ЮKassa &nbsp;·&nbsp;
+        <strong>Корпоративная оплата:</strong> напишите <a href="https://t.me/ZinaidaChu" target="_blank">@ZinaidaChu</a> — нужен ИНН, КПП, название организации &nbsp;·&nbsp;
         <strong>Рассрочка:</strong> рассматривается индивидуально &nbsp;·&nbsp;
         <strong>Апгрейд тарифа:</strong> всегда возможен, без переплат
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- ======= REFERRAL ======= -->
+<section class="section section-referral" id="referral">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Реферальная программа</div>
+      <h2>Рекомендуйте —<br/>и получайте бонусы</h2>
+      <p style="max-width:540px;margin:12px auto 0;color:var(--gray-500);">
+        Поделитесь курсом с коллегами. Каждая рекомендация, которая привела к покупке, фиксируется и вознаграждается.
+      </p>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-step">1</div>
+        <div class="ref-count">1 человек</div>
+        <div class="ref-reward"> Благодарность</div>
+        <p>Личная благодарность от Зинаиды</p>
+      </div>
+      <div class="ref-card">
+        <div class="ref-step">2</div>
+        <div class="ref-count">2 человека</div>
+        <div class="ref-reward"> Возврат 10%</div>
+        <p>10% от стоимости вашего тарифа — возвращаем на карту</p>
+      </div>
+      <div class="ref-card ref-hot">
+        <div class="ref-step">3</div>
+        <div class="ref-count">3 человека</div>
+        <div class="ref-reward"> Базовый — бесплатно</div>
+        <p>Тариф «Базовый» в подарок: вся программа и книга</p>
+      </div>
+      <div class="ref-card ref-star">
+        <div class="ref-step">5+</div>
+        <div class="ref-count">5 и более</div>
+        <div class="ref-reward">Стандарт — бесплатно</div>
+        <p>Тариф «Стандарт» с сертификатом и защитой проекта</p>
+      </div>
+    </div>
+    <div class="ref-how">
+      <p>Участвуете в программе или хотите узнать детали?<br/>
+      Напишите Елене — она зафиксирует ваши рекомендации.</p>
+      <a href="https://t.me/Averkieva_Helen" target="_blank" class="btn btn-primary">Написать Елене →</a>
     </div>
   </div>
 </section>
@@ -777,7 +776,6 @@
   <div class="container" style="max-width:800px;">
     <div class="section-label">FAQ</div>
     <h2>Частые вопросы</h2>
-
     <div class="faq-list">
 
       <div class="faq-item open">
@@ -812,7 +810,7 @@
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Как получить сертификат?<span class="faq-ico">+</span></div>
-        <div class="faq-a">Сертификат входит в тарифы Стандарт и VIP. Нужно защитить проект 11 июня: 10 минут — презентация, 10 минут — обратная связь. Формат рабочий, без экзаменационного давления. Так ваши знания становятся доказанным опытом.</div>
+        <div class="faq-a">Сертификат входит в тарифы Стандарт и VIP. Нужно защитить проект 11 июня: 10 минут — презентация, 10 минут — обратная связь. Формат рабочий, без экзаменационного давления.</div>
       </div>
 
       <div class="faq-item">
@@ -843,14 +841,14 @@
         <h2 class="c-title">Мы на связи</h2>
         <p class="c-desc">Если что-то осталось непонятным — пишите в любое время. Отвечаем в течение рабочего дня.</p>
         <div class="c-buttons">
-          <a href="https://t.me/ZinaidaChu" target="_blank" class="btn btn-primary btn-lg"> Написать Зинаиде</a>
+          <a href="https://t.me/ZinaidaChu" target="_blank" class="btn btn-primary btn-lg">Написать Зинаиде</a>
           <a href="https://t.me/Averkieva_Helen" target="_blank" class="btn btn-outline btn-lg">Написать Елене</a>
         </div>
         <div class="c-details">
-          <div class="c-detail"><div class="c-d-ico"></div><div><a href="https://t.me/ZinaidaChu" style="color:rgba(255,255,255,.85);font-weight:700;">@ZinaidaChu</a> — Зинаида Чумакова</div></div>
-          <div class="c-detail"><div class="c-d-ico"></div><div><a href="https://t.me/Averkieva_Helen" style="color:rgba(255,255,255,.85);font-weight:700;">@Averkieva_Helen</a> — Елена Аверкиева</div></div>
-          <div class="c-detail"><div class="c-d-ico"></div><div><a href="tel:+79253867994" style="color:rgba(255,255,255,.85);font-weight:700;">+7 924 101 2664</a></div></div>
-          <div class="c-detail"><div class="c-d-ico"></div><div><a href="https://t.me/chumakova_HRD" target="_blank" style="color:rgba(255,255,255,.85);font-weight:700;">t.me/chumakova_HRD</a> — Telegram-канал</div></div>
+          <div class="c-detail"><div class="c-d-ico">✈️</div><div><a href="https://t.me/ZinaidaChu" style="color:rgba(255,255,255,.85);font-weight:700;">@ZinaidaChu</a> — Зинаида Чумакова</div></div>
+          <div class="c-detail"><div class="c-d-ico">✈️</div><div><a href="https://t.me/Averkieva_Helen" style="color:rgba(255,255,255,.85);font-weight:700;">@Averkieva_Helen</a> — Елена Аверкиева</div></div>
+          <div class="c-detail"><div class="c-d-ico">📞</div><div><a href="tel:+79253867994" style="color:rgba(255,255,255,.85);font-weight:700;">+7 925 386 7994</a> — Елена Аверкиева</div></div>
+          <div class="c-detail"><div class="c-d-ico">✈️</div><div><a href="https://t.me/chumakova_HRD" target="_blank" style="color:rgba(255,255,255,.85);font-weight:700;">t.me/chumakova_HRD</a> — Telegram-канал</div></div>
         </div>
       </div>
       <div class="c-sidebar">
@@ -873,7 +871,7 @@
 
 <!-- ======= STICKY BAR ======= -->
 <div class="sticky-cta" id="stickyCta">
-  <span class="sticky-cta-text">Ранняя цена до 25 марта — <strong>экономия до 9 000 ₽</strong></span>
+  <span class="sticky-cta-text">Курс стартует <strong>14 апреля</strong> — места ограничены</span>
   <a href="#pricing" class="btn btn-gold" style="padding:10px 28px;font-size:.9rem;">Выбрать тариф</a>
 </div>
 
@@ -905,7 +903,6 @@
 
 <!-- ======= SCRIPTS ======= -->
 <script>
-  // --- Navbar scroll ---
   const navbar    = document.getElementById('navbar');
   const stickyCta = document.getElementById('stickyCta');
   window.addEventListener('scroll', () => {
@@ -913,24 +910,6 @@
     stickyCta.classList.toggle('visible', window.scrollY > 500);
   });
 
-  // --- Countdown to March 25, 2026, 23:59:59 MSK ---
-  function updateCountdown() {
-    const deadline = new Date('2026-03-25T20:59:59Z');
-    const diff = deadline - new Date();
-    if (diff <= 0) {
-      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
-      return;
-    }
-    const pad = n => String(n).padStart(2,'0');
-    document.getElementById('cd-days').textContent  = pad(Math.floor(diff / 86400000));
-    document.getElementById('cd-hours').textContent = pad(Math.floor(diff % 86400000 / 3600000));
-    document.getElementById('cd-mins').textContent  = pad(Math.floor(diff % 3600000  / 60000));
-    document.getElementById('cd-secs').textContent  = pad(Math.floor(diff % 60000    / 1000));
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-  // --- Module accordion ---
   function toggleModule(header) {
     const item    = header.parentElement;
     const wasOpen = item.classList.contains('open');
@@ -938,12 +917,10 @@
     if (!wasOpen) item.classList.add('open');
   }
 
-  // --- FAQ accordion ---
   function toggleFaq(question) {
     question.parentElement.classList.toggle('open');
   }
 
-  // --- Smooth scroll ---
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
@@ -951,7 +928,6 @@
     });
   });
 
-  // --- ОПЛАТА ЮКасса ---
   let plan = {};
 
   function openPayment(tariff, amount, desc) {
@@ -987,9 +963,9 @@
     const email = document.getElementById('m-email').value.trim();
     const phone = document.getElementById('m-phone').value.trim();
 
-    if (!name || !email || !phone)                         { showErr('Заполните все поля'); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))         { showErr('Введите корректный email'); return; }
-    if (phone.replace(/\D/g, '').length < 10)              { showErr('Введите корректный телефон'); return; }
+    if (!name || !email || !phone)                        { showErr('Заполните все поля'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))        { showErr('Введите корректный email'); return; }
+    if (phone.replace(/\D/g, '').length < 10)             { showErr('Введите корректный телефон'); return; }
 
     document.getElementById('m-err').style.display = 'none';
     const btn = document.getElementById('m-btn');
@@ -1000,14 +976,7 @@
       const res  = await fetch('/api/create-payment', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({
-          name,
-          email,
-          phone,
-          tariff:      plan.tariff,
-          amount:      plan.amount,
-          description: plan.desc
-        })
+        body:    JSON.stringify({ name, email, phone, tariff: plan.tariff, amount: plan.amount, description: plan.desc })
       });
       const data = await res.json();
       if (data.redirect_url) {
@@ -1023,14 +992,11 @@
   }
 
   function showErr(msg) {
-    const el         = document.getElementById('m-err');
-    el.textContent   = '⚠️ ' + msg;
+    const el       = document.getElementById('m-err');
+    el.textContent = '⚠️ ' + msg;
     el.style.display = 'block';
   }
 </script>
 
 </body>
 </html>
-```
-
-```
